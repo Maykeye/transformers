@@ -97,6 +97,7 @@ class LlamaConfig(PretrainedConfig):
         bos_token_id=1,
         eos_token_id=2,
         tie_word_embeddings=False,
+        use_attn_upcast=True,
         **kwargs,
     ):
         self.vocab_size = vocab_size
@@ -109,6 +110,7 @@ class LlamaConfig(PretrainedConfig):
         self.initializer_range = initializer_range
         self.rms_norm_eps = rms_norm_eps
         self.use_cache = use_cache
+        self.use_attn_upcast = use_attn_upcast
         super().__init__(
             pad_token_id=pad_token_id,
             bos_token_id=bos_token_id,
